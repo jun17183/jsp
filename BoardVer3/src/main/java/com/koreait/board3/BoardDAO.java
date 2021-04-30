@@ -70,6 +70,38 @@ public class BoardDAO {
 		
 		return list;
 	};
+	
+	public static BoardVO selBoard(int iboard) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String sql = " SELECT * FROM t_board WHERE iboard = ? ";
+		
+		try {
+			con = DBUtils.getCon();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, iboard);
+			
+			rs = ps.executeQuery();	// select
+			
+			if(rs.next()) {
+				BoardVO vo = new BoardVO();
+				vo.setIboard(rs.getInt("iboard"));
+				vo.setTitle(rs.getString("title"));
+				vo.setCtnt(rs.getString("ctnt"));
+				vo.setRegdt(rs.getString("regdt"));
+				
+				return vo;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.close(con, ps, rs);
+		}
+		
+		return null;
+	}
 }
 
 

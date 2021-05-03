@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,9 @@
 	#ctnt { width: 499px; height: 300px; padding: 12px; border-bottom: 1px solid black; }
 	textarea { width: 469px; height: 240px; margin-top: 5px; }
 	#btnBox { width: 500px; height: 40px; }
-	#btnBox input { position: relative; float: right; top: 8px; margin-right: 10px; }
+	#btnBox input { position: relative; float: right; top: 8px; margin-right: 10px; cursor: pointer; }
 	#listBtn { position: absolute; bottom: 8px; margin-left: 10px; }
+	button { cursor: pointer; }
 </style>
 </head>
 <body>

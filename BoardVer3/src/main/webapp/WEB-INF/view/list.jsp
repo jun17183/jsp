@@ -12,7 +12,7 @@
 	h1 { width: 499px; height: 60px; padding-left: 15px; margin: 0; line-height: 60px; text-align: center; }
 	#content { position: relative; top: -1px; width: 499px; min-height: 10px; border-top: 0px; border-bottom: 1px solid black; }
 	#btnBox { width: 500px; height: 42px; }
-	#btnBox button { float: right; position: relative; top: 8px; right: 10px; }
+	#btnBox button { float: right; position: relative; top: 8px; right: 10px; cursor: pointer; }
 	table, td, th { border: 1px solid black; border-collapse: collapse; }
 	table { position: relative; left: -1px; top: 1px; width: 500px; height: calc(100% + 1px); border-top: 0px; border-bottom: 0px; }
 	tr { height: 30px; }

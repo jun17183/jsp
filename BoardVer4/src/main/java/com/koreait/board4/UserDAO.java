@@ -50,7 +50,7 @@ public class UserDAO {
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {
-				if (param.getUpw() == rs.getString("upw")) { return 1; } 
+				if (param.getUpw().equals(rs.getString("upw"))) { return 1; } 
 				else { return 3; }
 			} else {
 				return 2;

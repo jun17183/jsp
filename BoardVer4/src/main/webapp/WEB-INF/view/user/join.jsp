@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Join</title>
 </head>
 <body>
 	<div>
-		<a href="login">∑Œ±◊¿Œ µπæ∆∞°±‚</a>
+		<a href="login">Î°úÍ∑∏Ïù∏</a>
 	</div>
 	<div>
 		<form action="join" method="post">
@@ -16,11 +16,11 @@
 			<div><input type="password" name="upw" placeholder="password"></div>
 			<div><input type="text" name="unm" placeholder="name"></div>
 			<div>
-				º∫∫∞ : 
-				<label>ø©º∫<input type="radio" name="gender" value="0" checked></label>
-				<label>≥≤º∫<input type="radio" name="gender" value="1"></label>
+				ÏÑ±Î≥Ñ : 
+				<label>Ïó¨ÏÑ±<input type="radio" name="gender" value="0" checked></label>
+				<label>ÎÇ®ÏÑ±<input type="radio" name="gender" value="1"></label>
 			</div>
-			<div><input type="submit" value="»∏ø¯∞°¿‘"></div>
+			<div><input type="submit" value="Ï†úÏ∂ú"></div>
 		</form>
 	</div>
 </body>

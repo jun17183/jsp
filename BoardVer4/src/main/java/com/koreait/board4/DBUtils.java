@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class UserDBUtils {
+public class DBUtils {
 
 	public static Connection getCon() throws Exception {
 		final String DB_NAME = "boardver4";

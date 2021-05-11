@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.koreait.board4.MyUtils;
 import com.koreait.board4.UserDAO;
 
@@ -24,9 +26,12 @@ public class JoinServlet extends HttpServlet {
 		String unm = request.getParameter("unm");
 		int gender = MyUtils.getParamInt("gender", request); 
 		
+		String hashedUpw = BCrypt.hashpw(upw, BCrypt.gensalt());	// 비밀번호 암호화
+		System.out.println("hashedUpw : " + hashedUpw);
+		
 		UserVO vo = new UserVO();
 		vo.setUid(uid);
-		vo.setUpw(upw);
+		vo.setUpw(hashedUpw);
 		vo.setUnm(unm);
 		vo.setGender(gender);
 		
@@ -36,3 +41,8 @@ public class JoinServlet extends HttpServlet {
 	}
 
 }
+
+/*
+	BCrypt : 암호화 기술 중 하나
+	gensalt : salt란, 가령 우리가 입력한 암호가 123이고 암호화에 사용되는 특정 문자열 abc가 있다고 하면 이 둘을 버무려 암호화된 비밀번호를 만드는 것
+*/

@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>write</title>
 </head>
 <body>
 	<h1>write</h1>
 	<form action="write" method="post">
-		<div>Á¦¸ñ : <input type="text" name="title"></div>
-		<div>³»¿ë : <textarea name="ctnt"></textarea></div>
+		<div>ì œëª© : <input type="text" name="title"></div>
+		<div>ë‚´ìš© : <textarea name="ctnt"></textarea></div>
 		<div>
-			<input type="submit" value="ÀÛ¼º">
+			<input type="submit" value="ìž‘ì„±">
 		</div>
 	</form>
 </body>

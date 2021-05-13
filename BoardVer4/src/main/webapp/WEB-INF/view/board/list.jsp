@@ -36,7 +36,7 @@
 </body>
 <script>
 	function moveToDetail(iboard) {
-		location.href = '/detail?iboard=' + iboard;
+		location.href = 'detail?iboard=' + iboard;
 	}
 </script>
 </html>

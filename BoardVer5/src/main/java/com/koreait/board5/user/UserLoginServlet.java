@@ -18,7 +18,7 @@ public class UserLoginServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (MyUtils.getLoginUser(request) != null) {
-			response.sendRedirect("/board/list");
+			response.sendRedirect("/board/boardList");
 			return;
 		}
 		

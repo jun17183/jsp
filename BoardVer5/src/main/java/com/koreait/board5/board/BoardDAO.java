@@ -51,16 +51,20 @@ public class BoardDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		String sql = " select A.title, A.ctnt, A.iboard, A.regdt, A.iuser, B.unm "
+		String sql = " select A.title, A.ctnt, A.iboard, A.regdt, A.iuser, B.unm, if(C.iboard IS NULL, 0, 1) AS isFav "
 				+ " from t_board A "
 				+ " inner join t_user B "
 				+ " on A.iuser = B.iuser "
-				+ " where iboard = ? ";
+				+ " LEFT JOIN t_board_fav C "
+				+ " ON A.iboard = C.iboard "
+				+ " AND C.iuser = ? "
+				+ " WHERE A.iboard = ? ";
 		
 		try {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, param.getIboard());
+			ps.setInt(1, param.getIuser());		// 이 iuser는 board글 작성자의 iuser가 아닌 현재 로그인한 사람의 iuser값임(좋아요 눌렀는지 안눌렀는지)
+			ps.setInt(2, param.getIboard());
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {
@@ -70,6 +74,7 @@ public class BoardDAO {
 				vo.setRegdt(rs.getString("regdt"));
 				vo.setIuser(rs.getInt("iuser"));
 				vo.setUnm(rs.getString("unm"));
+				vo.setIsFav(rs.getInt("isFav"));
 			}
 			return vo;
 		} catch (Exception e) {

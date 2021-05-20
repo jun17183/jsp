@@ -25,6 +25,7 @@ public class BoardDetailServlet extends HttpServlet {
 		
 		BoardVO param = new BoardVO();
 		param.setIboard(iboard);
+		param.setIuser(MyUtils.getLoginUserPk(request));	// 원래 vo의 iuser는 글쓴이를 말하지만, 여기선 현재 로그인한 user의 id 값을 담는 용도(돌려쓰기)
 		
 		CmtVO cmtParam = new CmtVO();
 		cmtParam.setIboard(iboard);

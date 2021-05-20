@@ -10,15 +10,15 @@ function delCmt(iboard, icmt) {
 }
 
 function updCmt(icmt, cmt) {
-	insFrm.classList.add("hidden");
-	updFrm.classList.remove("hidden");
+	insFrm.classList.add('hidden');
+	updFrm.classList.remove('hidden');
 	updFrm.icmt.value = icmt;
 	updFrm.cmt.value = cmt;
 }
 
 function frmFlag() {
-	insFrm.classList.remove("hidden");
-	updFrm.classList.add("hidden");
+	insFrm.classList.remove('hidden');
+	updFrm.classList.add('hidden');
 }
 
 

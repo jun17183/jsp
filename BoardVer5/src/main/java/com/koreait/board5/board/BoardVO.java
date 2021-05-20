@@ -8,6 +8,7 @@ public class BoardVO {
 	private int iuser;
 	private String regdt;
 	private String unm;
+	private int isFav;
 	
 	public String getUnm() {
 		return unm;
@@ -45,4 +46,11 @@ public class BoardVO {
 	public void setRegdt(String regdt) {
 		this.regdt = regdt;
 	}
+	public int getIsFav() {
+		return isFav;
+	}
+	public void setIsFav(int isFav) {
+		this.isFav = isFav;
+	}
+	
 }

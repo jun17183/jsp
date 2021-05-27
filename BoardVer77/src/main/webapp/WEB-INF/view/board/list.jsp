@@ -12,7 +12,7 @@
 		<th>작성일</th>
 	</tr>
 	<c:forEach items="${requestScope.list}" var="item">
-		<tr>
+		<tr class="record" onclick="moveToDetail(${})">
 			<td>${item.iboard}</td>
 			<td>
 				<c:choose>

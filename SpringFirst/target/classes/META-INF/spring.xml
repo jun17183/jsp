@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mitv" class="com.spring.first.MiTv">
+		<!-- <constructor-arg ref="speaker"></constructor-arg> -->
+		<property name="speaker" ref="speaker"></property>
+	</bean>
+	
+	<bean id="speaker" class="com.spring.first.AppleSpeaker">
+		<constructor-arg value="30"></constructor-arg>
+	</bean>
+</beans>
+
+<!-- 
+	xml : xml은 그냥 문법임. <abc></abc> or <abc/> 요거 두개만 기억하고 있으면 됨. 이게 문법임. 
+	각 태그들에 의미가 담겨져 있고 각 태그에 속성이 있으며 그 속성의 값으로 문자열이 올 뿐, 각 프레임워크마다 태그의 의미, 속성의 의미 등은 다 다름.
+	xml은 스프링 안에서만 먹히는 문법. 안드로이드에서 xml이라고 하면 당연히 모름.
+	태그 안에 태그를 적을 수 있음. <abc><aaa></aaa></abc>.
+	막말로 xml은 그냥 메모장이라고 생각해도 됨. 단지 그 안에 해당 문법을 지켜서 무언갈 입력하면
+	스프링이 이를 해석은 할 수 있다 정도.
+	
+	beans : 특정 클래스를 관리해줘~라고 bean 등록을 할 수 있음.
+	빈 등록을 하면 이제부터 등록한 클래스, 즉 MiTv를 객체화하는 건 우리가 아닌 스프링임.
+	스프링에게 맡기고 싶은 객체를 빈 등록하는 것.
+	이러면 스프링이 해당 객체 주소를 기억하고 있다가 요청을 하면 던져줌.
+	
+	(bean속성)scope의 디폴트는 singletone임. 그래서 getBean으로 객체를 한번 만들면 쭉 그 객체 주소만 담음.
+	tv2 tv3으로 getBean을 또 해도 같은 주소값만 리턴함.
+	prototype으로 바꾸면 getBean을 할 때마다 새로운 주소(new MiTv)를 제공함.
+	근데 사실 쌤 왈 한번도 써 본 적 없다고 하심
+	
+	(bean속성)lazy-init="true"는 getBean을 할 때만 주소를 담음. 원래는 bean 등록만 해도 바로 객체를
+	생성해서 항상 주소를 담고 있음
+	
+	(사실 scope랑 lazy-init은 안 중요함)
+	
+	id="speaker2" 이렇게 2개 만들 수도 있음.
+	constructor-arg value="30" 이러면 해당 객체의 기본 생성자에 30이란 값을 넣어줌.
+	id="speaker3" value="50" 이렇게도 가능.
+	
+	생성자에 주소값을 전달하려면 value가 아닌 ref를 사용해야 함. 값으로는 bean의 id값을 적어주면
+	해당 객체 주소값이 전달됨.
+	
+	만약에 int를 받는 생성자와 객체주소값을 받는 생성자가 있을 때, constructor-arg로 객체주소값을
+	전달하고 있다면 객체주소값을 받는 생성자가 실행이 됨.
+	
+	ioc개발 -> 저기 class에서 .first.AppleSpeaker에서 Sony로만 바꿔주면 코드 수정을 할 필요
+	없이 다 변경이 가능함
+	
+	constructor-arg(생성자로 (private)값 넣기) 말고도 값을 넣는 방법 : setter
+	setter로 값을 넣으려면 property를 사용해야 함. name은 멤버변수명, value나 ref에 값
+-->
